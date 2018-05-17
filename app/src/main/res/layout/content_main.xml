@@ -24,7 +24,7 @@
                 android:id="@+id/second_activity_jump"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SecondActivity" />
+                android:text="序列化方式比较" />
         </LinearLayout>
     </ScrollView>
 

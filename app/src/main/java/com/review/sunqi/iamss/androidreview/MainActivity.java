@@ -7,22 +7,39 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
+
 public class MainActivity extends Activity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
+    private View.OnClickListener mClickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.first_activity_jump).setOnClickListener(new View.OnClickListener() {
+        initListener();
+        findViewById(R.id.first_activity_jump).setOnClickListener(mClickListener);
+        findViewById(R.id.second_activity_jump).setOnClickListener(mClickListener);
+        Log.e(TAG, "onCreate");
+    }
+
+    private void initListener() {
+        mClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FirstActivity.class);
-                startActivity(intent);
+                switch (view.getId()) {
+                    case R.id.first_activity_jump:
+                        Intent intent = new Intent(MainActivity.this, FirstActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.second_activity_jump:
+                        Intent intent1 = new Intent(MainActivity.this, SerializableTestDemo.class);
+                        startActivity(intent1);
+                        break;
+                }
             }
-        });
-        Log.e(TAG, "onCreate");
+        };
     }
 
     @Override
