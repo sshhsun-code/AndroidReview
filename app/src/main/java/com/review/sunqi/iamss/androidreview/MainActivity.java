@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
 
 public class MainActivity extends Activity {
@@ -21,6 +22,7 @@ public class MainActivity extends Activity {
         initListener();
         findViewById(R.id.first_activity_jump).setOnClickListener(mClickListener);
         findViewById(R.id.second_activity_jump).setOnClickListener(mClickListener);
+        findViewById(R.id.third_activity_jump).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
     }
 
@@ -36,6 +38,10 @@ public class MainActivity extends Activity {
                     case R.id.second_activity_jump:
                         Intent intent1 = new Intent(MainActivity.this, SerializableTestDemo.class);
                         startActivity(intent1);
+                        break;
+                    case R.id.third_activity_jump:
+                        Intent intent2 = new Intent(MainActivity.this, HolderActivity.class);
+                        startActivity(intent2);
                         break;
                 }
             }

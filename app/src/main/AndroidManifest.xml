@@ -31,6 +31,8 @@
             android:launchMode="standard"/>
         <activity android:name=".serializablepkg.SerializableTestDemo"
             android:launchMode="standard"/>
+        <activity android:name=".fragment_test.HolderActivity"
+            android:launchMode="standard"/>
     </application>
 
 </manifest>
