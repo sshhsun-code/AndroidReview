@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.first_activity_jump).setOnClickListener(mClickListener);
         findViewById(R.id.second_activity_jump).setOnClickListener(mClickListener);
         findViewById(R.id.third_activity_jump).setOnClickListener(mClickListener);
+        findViewById(R.id.fouth_activity_jump).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
     }
 
@@ -42,6 +43,10 @@ public class MainActivity extends Activity {
                     case R.id.third_activity_jump:
                         Intent intent2 = new Intent(MainActivity.this, HolderActivity.class);
                         startActivity(intent2);
+                        break;
+                    case R.id.fouth_activity_jump:
+                        Intent intent3 = new Intent(MainActivity.this, HolderActivity.class);
+                        startActivity(intent3);
                         break;
                 }
             }

@@ -33,6 +33,8 @@
             android:launchMode="standard"/>
         <activity android:name=".fragment_test.HolderActivity"
             android:launchMode="standard"/>
+        <activity android:name=".adil_Test.AidlTestActivity"
+            android:launchMode="standard"/>
     </application>
 
 </manifest>
