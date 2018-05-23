@@ -35,6 +35,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Binder使用~AIDL" />
+            <Button
+                android:id="@+id/fifth_activity_jump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Binder使用~AIDLTest2" />
         </LinearLayout>
     </ScrollView>
 

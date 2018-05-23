@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.review.sunqi.iamss.androidreview.adil_Test.AidlTestActivity;
+import com.review.sunqi.iamss.androidreview.aidl2.AidlTest2Activity;
 import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
 
@@ -25,6 +26,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.second_activity_jump).setOnClickListener(mClickListener);
         findViewById(R.id.third_activity_jump).setOnClickListener(mClickListener);
         findViewById(R.id.fouth_activity_jump).setOnClickListener(mClickListener);
+        findViewById(R.id.fifth_activity_jump).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
     }
 
@@ -48,6 +50,10 @@ public class MainActivity extends Activity {
                     case R.id.fouth_activity_jump:
                         Intent intent3 = new Intent(MainActivity.this, AidlTestActivity.class);
                         startActivity(intent3);
+                        break;
+                    case R.id.fifth_activity_jump:
+                        Intent intent4 = new Intent(MainActivity.this, AidlTest2Activity.class);
+                        startActivity(intent4);
                         break;
                 }
             }
