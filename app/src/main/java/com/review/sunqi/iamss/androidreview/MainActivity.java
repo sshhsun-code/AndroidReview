@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.review.sunqi.iamss.androidreview.adil_Test.AidlTestActivity;
 import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
 
@@ -45,7 +46,7 @@ public class MainActivity extends Activity {
                         startActivity(intent2);
                         break;
                     case R.id.fouth_activity_jump:
-                        Intent intent3 = new Intent(MainActivity.this, HolderActivity.class);
+                        Intent intent3 = new Intent(MainActivity.this, AidlTestActivity.class);
                         startActivity(intent3);
                         break;
                 }

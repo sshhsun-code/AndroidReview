@@ -1,4 +1,7 @@
-package com.review.sunqi.iamss.androidreview.adil_Test;
+// IMyAidl.aidl
+package com.review.sunqi.iamss.androidreview.adil_Test.bean;
+
+// Declare any non-default types here with import statements
 
 import com.review.sunqi.iamss.androidreview.adil_Test.bean.Person;
 

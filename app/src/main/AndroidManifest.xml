@@ -35,6 +35,10 @@
             android:launchMode="standard"/>
         <activity android:name=".adil_Test.AidlTestActivity"
             android:launchMode="standard"/>
+        <service android:name=".adil_Test.MyAidlService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":aidl"/>
     </application>
 
 </manifest>
