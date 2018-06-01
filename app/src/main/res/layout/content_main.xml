@@ -40,6 +40,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Binder使用~AIDLTest2" />
+            <Button
+                android:id="@+id/sixth_activity_jump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IPC Messenger使用" />
         </LinearLayout>
     </ScrollView>
 

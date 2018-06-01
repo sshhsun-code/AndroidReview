@@ -37,11 +37,17 @@
             android:launchMode="standard"/>
         <activity android:name=".aidl2.AidlTest2Activity"
             android:launchMode="standard"/>
+        <activity android:name=".aidl3.MessengerActivity"
+            android:launchMode="standard"/>
         <service android:name=".adil_Test.MyAidlService"
             android:enabled="true"
             android:exported="true"
             android:process=":aidl"/>
         <service android:name=".aidl2.AIDLService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":aidl"/>
+        <service android:name=".aidl3.MessengerService"
             android:enabled="true"
             android:exported="true"
             android:process=":aidl"/>
