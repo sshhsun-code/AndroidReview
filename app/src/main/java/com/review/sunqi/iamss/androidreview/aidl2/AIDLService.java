@@ -15,7 +15,35 @@ public class AIDLService extends Service {
 
     String info = "";
 
-    private IBinder mBinder = new IBase.Stub() {
+    private class TransPot extends IBase.Stub {
+
+        @Override
+        public int add() throws RemoteException {
+            return 0;
+        }
+
+        @Override
+        public String getUserInfo(UserInfo userInfo) throws RemoteException {
+            return null;
+        }
+
+        @Override
+        public void getList(String[] list) throws RemoteException {
+
+        }
+
+        @Override
+        public void setList(String[] list) throws RemoteException {
+
+        }
+
+        @Override
+        public void getSList(String[] list) throws RemoteException {
+
+        }
+    }
+
+    private IBinder mBinder = new TransPot() {
         @Override
         public int add() throws RemoteException {
             return 7;
