@@ -12,4 +12,6 @@ interface IMyAidl {
     void addPerson(in Person person);
 
     List<Person> getPersonList();
+
+    Person getPerson();
 }

@@ -34,6 +34,11 @@ public class MyAidlService extends Service {
         public List<Person> getPersonList() throws RemoteException {
             return mPersons;
         }
+
+        @Override
+        public Person getPerson() throws RemoteException {
+            return null;
+        }
     };
 
     @Nullable
