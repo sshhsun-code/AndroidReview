@@ -43,6 +43,8 @@
             android:launchMode="standard"/>
         <activity android:name=".ashmem_test.AshmemActivity"
             android:launchMode="standard"/>
+        <activity android:name=".flow.FlowTestActivity"
+            android:launchMode="standard"/>
         <service android:name=".adil_Test.MyAidlService"
             android:enabled="true"
             android:exported="true"

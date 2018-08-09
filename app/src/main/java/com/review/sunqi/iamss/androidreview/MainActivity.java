@@ -12,6 +12,7 @@ import com.review.sunqi.iamss.androidreview.aidl2.AidlTest2Activity;
 import com.review.sunqi.iamss.androidreview.aidl3.MessengerActivity;
 import com.review.sunqi.iamss.androidreview.aidl4_binderpool.BinderPoolActivity;
 import com.review.sunqi.iamss.androidreview.ashmem_test.AshmemActivity;
+import com.review.sunqi.iamss.androidreview.flow.FlowTestActivity;
 import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
 
@@ -33,6 +34,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.sixth_activity_jump).setOnClickListener(mClickListener);
         findViewById(R.id.binder_pool_activity_jump).setOnClickListener(mClickListener);
         findViewById(R.id.ashmem_test).setOnClickListener(mClickListener);
+        findViewById(R.id.flow_text_test).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
     }
 
@@ -72,6 +74,10 @@ public class MainActivity extends Activity {
                     case R.id.ashmem_test:
                         Intent intent7 = new Intent(MainActivity.this, AshmemActivity.class);
                         startActivity(intent7);
+                        break;
+                    case R.id.flow_text_test:
+                        Intent intent8 = new Intent(MainActivity.this, FlowTestActivity.class);
+                        startActivity(intent8);
                         break;
                 }
             }

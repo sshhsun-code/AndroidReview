@@ -55,6 +55,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="共享内存+Binder使用" />
+            <Button
+                android:id="@+id/flow_text_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自由自定义流式使用" />
         </LinearLayout>
     </ScrollView>
 
