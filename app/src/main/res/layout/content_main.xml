@@ -60,6 +60,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="自由自定义流式使用" />
+            <Button
+                android:id="@+id/mytextview_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自定义TextView使用" />
         </LinearLayout>
     </ScrollView>
 

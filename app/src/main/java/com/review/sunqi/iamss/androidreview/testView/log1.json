@@ -1,0 +1,76 @@
+
+layout_width = 100 dp
+
+layout_height = wrap_content
+
+Width :
+mode = EXACTLY & size = 300
+Height : 
+mode = AT_MOST & size = 1866
+Width :
+mode = EXACTLY & size = 300
+Height : 
+mode = AT_MOST & size = 1866
+
+================================================================================
+
+
+layout_width="match_parent"
+layout_height="wrap_content"
+
+Width :
+mode = EXACTLY & size = 1080
+Height : 
+mode = AT_MOST & size = 1866
+Width :
+mode = EXACTLY & size = 1080
+Height : 
+mode = AT_MOST & size = 1866
+
+
+================================================================================
+
+layout_width="wrap_content"
+layout_height="wrap_content"
+
+Width :
+mode = AT_MOST & size = 1080
+Height : 
+mode = AT_MOST & size = 1866
+Width :
+mode = EXACTLY & size = 127
+Height : 
+mode = AT_MOST & size = 1866
+
+
+================================================================================
+
+Activity中measure（0， 0）；
+
+
+
+08-13 01:42:55.834 4630-4630/com.review.sunqi.iamss.androidreview I/sunqi_log: imageView MeasuredWidth = 134
+    imageView MeasuredHeight = 78
+	
+	
+	
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+
+	
+08-13 01:42:55.854 4630-4630/com.review.sunqi.iamss.androidreview E/sunqi_log: Width :
+    mode = AT_MOST & size = 1080
+    Height : 
+    mode = AT_MOST & size = 1845
+    Width :
+    mode = EXACTLY & size = 134
+    Height : 
+    mode = AT_MOST & size = 1845
+08-13 01:42:55.884 4630-4630/com.review.sunqi.iamss.androidreview E/sunqi_log: Width :
+    mode = AT_MOST & size = 1080
+    Height : 
+    mode = AT_MOST & size = 1845
+    Width :
+    mode = EXACTLY & size = 134
+    Height : 
+    mode = AT_MOST & size = 1845
