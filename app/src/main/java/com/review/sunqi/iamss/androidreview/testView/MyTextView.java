@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 
 import com.review.sunqi.iamss.androidreview.R;
 
+import java.util.logging.Handler;
+
 public class MyTextView extends View {
 
     private  int mTextSize;
@@ -41,11 +43,18 @@ public class MyTextView extends View {
         mPaint.setColor(Color.BLACK);
         mPaint.setTextSize(mTextSize);
         mPaint.setTextAlign(Paint.Align.CENTER);
+        new android.os.Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.e("sunqi_log", "10S 后主动调用requestLayout");
+                requestLayout();
+            }
+        }, 10 * 1000);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-//        Log.e("sunqi_log", "From: ", new Exception());
+        Log.e("sunqi_log", "onMeasure");
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
@@ -106,6 +115,12 @@ public class MyTextView extends View {
         setMeasuredDimension(resultW,resultH);
     }
 
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+
+        Log.e("sunqi_log", "onLayout");
+    }
+
     private void printMeasureSpec(boolean isWidth, int mode, int size) {
         String modeStr = "";
         switch (mode) {
@@ -119,15 +134,15 @@ public class MyTextView extends View {
                 modeStr = "UNSPECIFIED";
                 break;
         }
-        Log.e("sunqi_log", "\n" + (isWidth ? "Width :" : "Height : "));
-        Log.e("sunqi_log", "mode = " + modeStr + " & size = " + size);
+//        Log.e("sunqi_log", "\n" + (isWidth ? "Width :" : "Height : "));
+//        Log.e("sunqi_log", "mode = " + modeStr + " & size = " + size);
 //        Log.e("sunqi_log", "From: ", new Exception());
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        Log.e("sunqi_log", "onDraw");
         int cx = (getWidth() - getPaddingLeft() - getPaddingRight()) / 2;
         int cy = (getHeight() - getPaddingTop() - getPaddingBottom()) / 2;
 

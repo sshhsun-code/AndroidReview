@@ -15,5 +15,23 @@
         android:textSize="24sp"
         android:text="test"/>
 
+    <TextView
+        android:id="@+id/btn_request_layout"
+        android:layout_alignParentRight="true"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:textColor="#fff"
+        android:text="测试request_layout"/>
+
+    <Button
+        android:id="@+id/btn_invalidate"
+        android:layout_below="@id/btn_request_layout"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试invalidate"/>
+
 
 </RelativeLayout>
