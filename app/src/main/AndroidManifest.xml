@@ -47,6 +47,8 @@
             android:launchMode="standard"/>
         <activity android:name=".testView.MyTextViewActivity"
             android:launchMode="standard"/>
+        <activity android:name=".testviewGroup.MyTestViewGroupAct"
+            android:launchMode="standard"/>
         <service android:name=".adil_Test.MyAidlService"
             android:enabled="true"
             android:exported="true"

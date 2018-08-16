@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.review.sunqi.iamss.androidreview.testviewGroup.TestViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#5892d4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:background="#fff"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingTop="2dp"
+        android:textSize="20sp"
+        android:layout_marginRight="5dp"
+        android:text="test1"/>
+    <ImageView
+        android:layout_marginLeft="5dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="5dp"
+        android:src="@mipmap/ic_launcher"
+        android:text="test"/>
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:background="#fff"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingTop="2dp"
+        android:textSize="20sp"
+        android:text="test2"/>
+
+
+</com.review.sunqi.iamss.androidreview.testviewGroup.TestViewGroup>

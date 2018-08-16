@@ -16,6 +16,7 @@ import com.review.sunqi.iamss.androidreview.flow.FlowTestActivity;
 import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
 import com.review.sunqi.iamss.androidreview.testView.MyTextViewActivity;
+import com.review.sunqi.iamss.androidreview.testviewGroup.MyTestViewGroupAct;
 
 public class MainActivity extends Activity {
 
@@ -37,6 +38,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.ashmem_test).setOnClickListener(mClickListener);
         findViewById(R.id.flow_text_test).setOnClickListener(mClickListener);
         findViewById(R.id.mytextview_test).setOnClickListener(mClickListener);
+        findViewById(R.id.mytest_view_group).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
     }
 
@@ -84,6 +86,10 @@ public class MainActivity extends Activity {
                     case R.id.mytextview_test:
                         Intent intent9 = new Intent(MainActivity.this, MyTextViewActivity.class);
                         startActivity(intent9);
+                        break;
+                    case R.id.mytest_view_group:
+                        Intent intent10 = new Intent(MainActivity.this, MyTestViewGroupAct.class);
+                        startActivity(intent10);
                         break;
                 }
             }
