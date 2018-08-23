@@ -70,6 +70,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="自定义ViewGroup使用" />
+            <Button
+                android:id="@+id/mytest_okhttp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OkHttpDemo使用" />
         </LinearLayout>
     </ScrollView>
 

@@ -2,7 +2,7 @@
 <com.review.sunqi.iamss.androidreview.testviewGroup.TestViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#5892d4"
-    android:layout_width="wrap_content"
+    android:layout_width="130dp"
     android:layout_height="wrap_content">
     <TextView
         android:background="#fff"
