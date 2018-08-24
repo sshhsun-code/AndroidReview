@@ -1,8 +1,12 @@
 package com.review.sunqi.iamss.androidreview.okhttp_demo;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.text.TextUtils;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.ParameterizedType;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -33,21 +37,21 @@ public class OkHttpUtils<T extends Object> {
 
     }
 
-    public void request(String url, Map<String, Object> paramsMap, final HttpListener listener, int method) {
+    public void request(String url, Map<String, Object> paramsMap, Class<T> tClass, final HttpListener listener, int method) {
 
         if (method == METHOD_GET) {
-            get(url, paramsMap, listener);
+            get(url, paramsMap, tClass,listener);
         } else if (method == METHOD_POST_JSON) {
-            postJson(url, paramsMap, listener);
+            postJson(url, paramsMap, tClass, listener);
         }
     }
 
-    private void postJson(String url, Map<String, Object> paramsMap, HttpListener listener) {
+    private void postJson(String url, Map<String, Object> paramsMap, Class<T> tClass, final HttpListener listener) {
 
 
     }
 
-    private void get(String url, Map<String, Object> paramsMap, final HttpListener listener) {
+    private void get(String url, Map<String, Object> paramsMap, final Class<T> tClass, final HttpListener listener) {
         if (TextUtils.isEmpty(url)) {
             return;
         }
@@ -77,8 +81,8 @@ public class OkHttpUtils<T extends Object> {
                 T t = null;
                 try {
                     // 注意：response.body().string()只能调用一次，第二次就会失败
-                    String rawString = response.body().string();
-                    t = createData(rawString);
+                    byte[] data = response.body().bytes();
+                    t = createData(tClass, data);
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
@@ -90,10 +94,15 @@ public class OkHttpUtils<T extends Object> {
                 }
             }
         });
-
     }
 
-    private T createData(String data) {
+    private T createData(Class<T> tClass, byte[] data) throws UnsupportedEncodingException, IllegalAccessException, InstantiationException {
+        if (tClass.equals(String.class)) {
+            return (T) new String(data, "UTF-8");
+        }
+        if (tClass.equals(Bitmap.class)) {
+            return (T) BitmapFactory.decodeByteArray(data, 0, data.length);
+        }
         return (T)data;
     }
 

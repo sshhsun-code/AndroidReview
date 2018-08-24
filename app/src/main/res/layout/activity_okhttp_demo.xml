@@ -5,9 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <Button
+        android:id="@+id/http_get"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="http_get"/>
+    <ImageView
+        android:id="@+id/iv_http_result_show"
+        android:layout_below="@id/http_get"
+        android:layout_width="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:layout_height="wrap_content"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_marginTop="55dp"
+        android:layout_below="@id/iv_http_result_show"
         android:layout_height="match_parent">
     <TextView
         android:id="@+id/http_result_show"
@@ -16,9 +28,4 @@
         android:textSize="20sp"
         android:text="this"/>
     </ScrollView>
-    <Button
-        android:id="@+id/http_get"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="http_get"/>
 </RelativeLayout>
