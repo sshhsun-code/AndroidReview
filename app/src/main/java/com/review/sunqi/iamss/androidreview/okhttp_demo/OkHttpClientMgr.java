@@ -4,6 +4,9 @@ import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.util.SparseArray;
 
+import com.review.sunqi.iamss.androidreview.okhttp_demo.advanced.RequestEncryptInterceptor;
+import com.review.sunqi.iamss.androidreview.okhttp_demo.advanced.TokenHeaderInterceptor;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.concurrent.TimeUnit;
@@ -59,10 +62,15 @@ public class OkHttpClientMgr {
     }
 
     private OkHttpClient createClient(OkHttpClient.Builder builder, ClientBuilder clientBuilder) {
+        OkHttpClient client;
         if (clientBuilder != null) {
             clientBuilder.buildClient(builder);
         }
-        return builder.build();
+        client = builder
+                .addInterceptor(new TokenHeaderInterceptor())
+                .addInterceptor(new RequestEncryptInterceptor())
+                .build();
+        return client;
     }
 
     public

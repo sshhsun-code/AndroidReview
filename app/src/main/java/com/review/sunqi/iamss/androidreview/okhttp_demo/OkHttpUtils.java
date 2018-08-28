@@ -6,7 +6,6 @@ import android.text.TextUtils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.ParameterizedType;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -17,7 +16,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * Created by sunqi on 2018/8/22.
+ * @author sunqi
+ * @date 2018/8/22
  */
 
 public class OkHttpUtils<T extends Object> {
@@ -40,7 +40,7 @@ public class OkHttpUtils<T extends Object> {
     public void request(String url, Map<String, Object> paramsMap, Class<T> tClass, final HttpListener listener, int method) {
 
         if (method == METHOD_GET) {
-            get(url, paramsMap, tClass,listener);
+            get(url, paramsMap, tClass, listener);
         } else if (method == METHOD_POST_JSON) {
             postJson(url, paramsMap, tClass, listener);
         }
@@ -103,7 +103,7 @@ public class OkHttpUtils<T extends Object> {
         if (tClass.equals(Bitmap.class)) {
             return (T) BitmapFactory.decodeByteArray(data, 0, data.length);
         }
-        return (T)data;
+        return (T) data;
     }
 
     private String toUrl(Map<String, Object> params, String url) {
@@ -126,8 +126,18 @@ public class OkHttpUtils<T extends Object> {
 
 
     public interface HttpListener<T> {
+        /**
+         * 执行成功，返回结果
+         *
+         * @param response
+         */
         void onSuccess(T response);
 
+        /**
+         * 执行失败回掉
+         *
+         * @param throwable
+         */
         void onFailure(Throwable throwable);
     }
 }
