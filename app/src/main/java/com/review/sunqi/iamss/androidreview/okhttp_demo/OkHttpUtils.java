@@ -39,11 +39,11 @@ public class OkHttpUtils<T extends Object> {
 
     public void request(String url, Map<String, Object> paramsMap, Class<T> tClass, final HttpListener listener, int method) {
 
-        if (method == METHOD_GET) {
-            get(url, paramsMap, tClass, listener);
-        } else if (method == METHOD_POST_JSON) {
-            postJson(url, paramsMap, tClass, listener);
-        }
+//        if (method == METHOD_GET) {
+//            get(url, paramsMap, tClass, listener);
+//        } else if (method == METHOD_POST_JSON) {
+//            postJson(url, paramsMap, tClass, listener);
+//        }
     }
 
     private void postJson(String url, Map<String, Object> paramsMap, Class<T> tClass, final HttpListener listener) {
@@ -52,48 +52,48 @@ public class OkHttpUtils<T extends Object> {
     }
 
     private void get(String url, Map<String, Object> paramsMap, final Class<T> tClass, final HttpListener listener) {
-        if (TextUtils.isEmpty(url)) {
-            return;
-        }
-        String getUrl = toUrl(paramsMap, url);
-        OkHttpClient client = OkHttpClientMgr.getIns().getClient();
-        Request request = new Request.Builder()
-                .url(getUrl)
-                .get()
-                .build();
-
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                if (listener != null) {
-                    listener.onFailure(e);
-                }
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (!response.isSuccessful()) {
-                    if (listener != null) {
-                        listener.onFailure(new IOException(response.message()));
-                    }
-                    return;
-                }
-                T t = null;
-                try {
-                    // 注意：response.body().string()只能调用一次，第二次就会失败
-                    byte[] data = response.body().bytes();
-                    t = createData(tClass, data);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    response.close();
-                }
-
-                if (listener != null) {
-                    listener.onSuccess(t);
-                }
-            }
-        });
+//        if (TextUtils.isEmpty(url)) {
+//            return;
+//        }
+//        String getUrl = toUrl(paramsMap, url);
+//        OkHttpClient client = OkHttpClientMgr.getIns().getClient();
+//        Request request = new Request.Builder()
+//                .url(getUrl)
+//                .get()
+//                .build();
+//
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                if (listener != null) {
+//                    listener.onFailure(e);
+//                }
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                if (!response.isSuccessful()) {
+//                    if (listener != null) {
+//                        listener.onFailure(new IOException(response.message()));
+//                    }
+//                    return;
+//                }
+//                T t = null;
+//                try {
+//                    // 注意：response.body().string()只能调用一次，第二次就会失败
+//                    byte[] data = response.body().bytes();
+//                    t = createData(tClass, data);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                } finally {
+//                    response.close();
+//                }
+//
+//                if (listener != null) {
+//                    listener.onSuccess(t);
+//                }
+//            }
+//        });
     }
 
     private T createData(Class<T> tClass, byte[] data) throws UnsupportedEncodingException, IllegalAccessException, InstantiationException {

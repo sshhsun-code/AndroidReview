@@ -14,6 +14,7 @@ import com.review.sunqi.iamss.androidreview.aidl4_binderpool.BinderPoolActivity;
 import com.review.sunqi.iamss.androidreview.ashmem_test.AshmemActivity;
 import com.review.sunqi.iamss.androidreview.flow.FlowTestActivity;
 import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
+import com.review.sunqi.iamss.androidreview.leakcanary_test.TestHelper;
 import com.review.sunqi.iamss.androidreview.okhttp_demo.OkHttpDemoActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
 import com.review.sunqi.iamss.androidreview.testView.MyTextViewActivity;
@@ -42,6 +43,8 @@ public class MainActivity extends Activity {
         findViewById(R.id.mytest_view_group).setOnClickListener(mClickListener);
         findViewById(R.id.mytest_okhttp).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
+
+        TestHelper.getmInstance(this).testMethod();
     }
 
     private void initListener() {

@@ -1,6 +1,7 @@
 package com.review.sunqi.iamss.androidreview.retrofit;
 
 import retrofit2.Retrofit;
+import retrofit2.http.GET;
 
 /**
  *
@@ -17,5 +18,10 @@ public class RetrofitUtils {
             mRetrofit = new Retrofit.Builder().build();
         }
         return mRetrofit;
+    }
+
+    @GET
+    public void get() {
+
     }
 }
