@@ -53,6 +53,8 @@
             android:launchMode="standard"/>
         <activity android:name=".okhttp_demo.OkHttpDemoActivity"
             android:launchMode="standard"/>
+        <activity android:name=".glide_test.demo.GlideTestActivity"
+            android:launchMode="standard"/>
         <service android:name=".adil_Test.MyAidlService"
             android:enabled="true"
             android:exported="true"

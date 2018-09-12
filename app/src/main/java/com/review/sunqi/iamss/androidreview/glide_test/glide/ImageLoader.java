@@ -30,8 +30,6 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.signature.StringSignature;
-import com.gm.hostpluginscommonlib.DeviceUtils;
-import com.gm.pluginscommonlib.R;
 import com.review.sunqi.iamss.androidreview.R;
 import com.review.sunqi.iamss.androidreview.utils.DeviceUtils;
 
@@ -129,7 +127,7 @@ public class ImageLoader {
      */
     public static Target<GlideDrawable> loadImage(Context context, String imageUrl, ImageView imageView, final DialogCallback dialogCallback) {
         if (isHaveLoad(context)) {
-            return Glide.with(context).load(imageUrl).into(new GlideDrawableImageViewTarget(imageView) {
+            return Glide.with(context).load(imageUrl).override(50, 50).into(new GlideDrawableImageViewTarget(imageView) {
                 @Override
                 public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> animation) {
                     super.onResourceReady(resource, animation);

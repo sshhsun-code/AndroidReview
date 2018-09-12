@@ -14,6 +14,7 @@ import com.review.sunqi.iamss.androidreview.aidl4_binderpool.BinderPoolActivity;
 import com.review.sunqi.iamss.androidreview.ashmem_test.AshmemActivity;
 import com.review.sunqi.iamss.androidreview.flow.FlowTestActivity;
 import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
+import com.review.sunqi.iamss.androidreview.glide_test.demo.GlideTestActivity;
 import com.review.sunqi.iamss.androidreview.leakcanary_test.TestHelper;
 import com.review.sunqi.iamss.androidreview.okhttp_demo.OkHttpDemoActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
@@ -42,6 +43,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.mytextview_test).setOnClickListener(mClickListener);
         findViewById(R.id.mytest_view_group).setOnClickListener(mClickListener);
         findViewById(R.id.mytest_okhttp).setOnClickListener(mClickListener);
+        findViewById(R.id.mytest_glide).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
 
         TestHelper.getmInstance(this).testMethod();
@@ -99,6 +101,10 @@ public class MainActivity extends Activity {
                     case R.id.mytest_okhttp:
                         Intent intent11 = new Intent(MainActivity.this, OkHttpDemoActivity.class);
                         startActivity(intent11);
+                        break;
+                    case R.id.mytest_glide:
+                        Intent intent12 = new Intent(MainActivity.this, GlideTestActivity.class);
+                        startActivity(intent12);
                         break;
                 }
             }

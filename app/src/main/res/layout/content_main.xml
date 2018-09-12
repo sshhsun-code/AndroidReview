@@ -75,6 +75,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OkHttpDemo使用" />
+            <Button
+                android:id="@+id/mytest_glide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="glideDemo使用" />
         </LinearLayout>
     </ScrollView>
 
