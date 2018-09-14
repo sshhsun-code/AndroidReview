@@ -12,6 +12,7 @@ import com.review.sunqi.iamss.androidreview.aidl2.AidlTest2Activity;
 import com.review.sunqi.iamss.androidreview.aidl3.MessengerActivity;
 import com.review.sunqi.iamss.androidreview.aidl4_binderpool.BinderPoolActivity;
 import com.review.sunqi.iamss.androidreview.ashmem_test.AshmemActivity;
+import com.review.sunqi.iamss.androidreview.diy_view.demo.ViewActivity;
 import com.review.sunqi.iamss.androidreview.flow.FlowTestActivity;
 import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
 import com.review.sunqi.iamss.androidreview.glide_test.demo.GlideTestActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.mytest_view_group).setOnClickListener(mClickListener);
         findViewById(R.id.mytest_okhttp).setOnClickListener(mClickListener);
         findViewById(R.id.mytest_glide).setOnClickListener(mClickListener);
+        findViewById(R.id.mytest_view).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
 
         TestHelper.getmInstance(this).testMethod();
@@ -105,6 +107,10 @@ public class MainActivity extends Activity {
                     case R.id.mytest_glide:
                         Intent intent12 = new Intent(MainActivity.this, GlideTestActivity.class);
                         startActivity(intent12);
+                        break;
+                    case R.id.mytest_view:
+                        Intent intent13 = new Intent(MainActivity.this, ViewActivity.class);
+                        startActivity(intent13);
                         break;
                 }
             }

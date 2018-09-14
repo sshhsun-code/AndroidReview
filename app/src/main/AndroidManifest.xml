@@ -55,6 +55,8 @@
             android:launchMode="standard"/>
         <activity android:name=".glide_test.demo.GlideTestActivity"
             android:launchMode="standard"/>
+        <activity android:name=".diy_view.demo.ViewActivity"
+            android:launchMode="standard"/>
         <service android:name=".adil_Test.MyAidlService"
             android:enabled="true"
             android:exported="true"
