@@ -85,6 +85,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="自定义View测试使用" />
+            <Button
+                android:id="@+id/mytest_dispatch_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="事件分发测试使用" />
         </LinearLayout>
     </ScrollView>
 

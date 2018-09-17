@@ -124,6 +124,11 @@ public class CustomScrollerViewGroup extends ViewGroup {
     }
 
     @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -161,7 +166,7 @@ public class CustomScrollerViewGroup extends ViewGroup {
                 }
                 scrollBy(scrolledX, 0);
                 mXLastMove = mXMove;
-                break;
+                break; 
             case MotionEvent.ACTION_UP:
                 // 当手指抬起时，根据当前的滚动值来判定应该滚动到哪个子控件的界面
                 int targetIndex = (getScrollX() + getWidth() / 2) / getWidth();
