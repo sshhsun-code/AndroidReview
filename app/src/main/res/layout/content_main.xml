@@ -86,10 +86,15 @@
                 android:layout_height="wrap_content"
                 android:text="自定义View测试使用" />
             <Button
-                android:id="@+id/mytest_dispatch_view"
+                android:id="@+id/my_animation_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="事件分发测试使用" />
+                android:text="补间动画测试使用" />
+            <Button
+                android:id="@+id/my_object_animator_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="属性动画测试使用" />
         </LinearLayout>
     </ScrollView>
 

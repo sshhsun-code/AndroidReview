@@ -57,7 +57,10 @@
             android:launchMode="standard"/>
         <activity android:name=".diy_view.demo.ViewActivity"
             android:launchMode="standard"/>
-        <activity android:name=".dispatch_test.TestDispatchActivity"/>
+        <activity android:name=".animation_test.view_animation.ViewAnimationTestAct"
+            android:launchMode="standard"/>
+        <activity android:name=".animation_test.property_animation.ObjectAnimatorTestAct"
+            android:launchMode="standard"/>
         <service android:name=".adil_Test.MyAidlService"
             android:enabled="true"
             android:exported="true"
