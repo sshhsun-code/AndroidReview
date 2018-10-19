@@ -61,6 +61,8 @@
             android:launchMode="standard"/>
         <activity android:name=".animation_test.property_animation.ObjectAnimatorTestAct"
             android:launchMode="standard"/>
+        <activity android:name=".thread_test.AsyncTaskTestActitivity"
+            android:launchMode="standard"/>
         <service android:name=".adil_Test.MyAidlService"
             android:enabled="true"
             android:exported="true"

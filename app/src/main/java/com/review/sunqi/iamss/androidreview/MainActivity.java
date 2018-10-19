@@ -23,6 +23,7 @@ import com.review.sunqi.iamss.androidreview.okhttp_demo.OkHttpDemoActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
 import com.review.sunqi.iamss.androidreview.testView.MyTextViewActivity;
 import com.review.sunqi.iamss.androidreview.testviewGroup.MyTestViewGroupAct;
+import com.review.sunqi.iamss.androidreview.thread_test.AsyncTaskTestActitivity;
 
 public class MainActivity extends Activity {
 
@@ -50,6 +51,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.mytest_view).setOnClickListener(mClickListener);
         findViewById(R.id.my_animation_view).setOnClickListener(mClickListener);
         findViewById(R.id.my_object_animator_view).setOnClickListener(mClickListener);
+        findViewById(R.id.my_async_task_test).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
 
         TestHelper.getmInstance(this).testMethod();
@@ -123,6 +125,10 @@ public class MainActivity extends Activity {
                     case R.id.my_object_animator_view:
                         Intent intent15 = new Intent(MainActivity.this, ObjectAnimatorTestAct.class);
                         startActivity(intent15);
+                        break;
+                    case R.id.my_async_task_test:
+                        Intent intent16 = new Intent(MainActivity.this, AsyncTaskTestActitivity.class);
+                        startActivity(intent16);
                         break;
                     default:
                         break;
