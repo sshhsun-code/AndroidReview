@@ -29,8 +29,10 @@ public class MySubActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setComponent(new ComponentName("com.sshhsun.pluginmoudle",
-                        "com.sshhsun.pluginmoudle.TestActivity"));
+//                intent.setComponent(new ComponentName("com.sshhsun.pluginmoudle",
+//                        "com.sshhsun.pluginmoudle.TestActivity"));
+                intent.setComponent(new ComponentName("com.huanju.chajiandemo",
+                        "com.huanju.chajiandemo.TestActivity"));
                 startActivity(intent);
             }
         });
@@ -43,7 +45,8 @@ public class MySubActivity extends Activity {
         hookClassLoader();
     }
 
-    private static final String PLUGIN_APK_PATH = "/plugin_demo.apk";
+//    private static final String PLUGIN_APK_PATH = "/plugin_demo.apk";
+    private static final String PLUGIN_APK_PATH = "/chajian_demo.apk";
 
     private void hookClassLoader() {
         try {
