@@ -100,6 +100,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AsyncTask使用" />
+            <Button
+                android:id="@+id/my_plugin_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="插件原理测试" />
         </LinearLayout>
     </ScrollView>
 

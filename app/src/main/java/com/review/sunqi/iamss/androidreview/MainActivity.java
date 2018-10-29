@@ -20,6 +20,7 @@ import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
 import com.review.sunqi.iamss.androidreview.glide_test.demo.GlideTestActivity;
 import com.review.sunqi.iamss.androidreview.leakcanary_test.TestHelper;
 import com.review.sunqi.iamss.androidreview.okhttp_demo.OkHttpDemoActivity;
+import com.review.sunqi.iamss.androidreview.plugin_invoke_helper.MySubActivity;
 import com.review.sunqi.iamss.androidreview.serializablepkg.SerializableTestDemo;
 import com.review.sunqi.iamss.androidreview.testView.MyTextViewActivity;
 import com.review.sunqi.iamss.androidreview.testviewGroup.MyTestViewGroupAct;
@@ -52,6 +53,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.my_animation_view).setOnClickListener(mClickListener);
         findViewById(R.id.my_object_animator_view).setOnClickListener(mClickListener);
         findViewById(R.id.my_async_task_test).setOnClickListener(mClickListener);
+        findViewById(R.id.my_plugin_test).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
 
         TestHelper.getmInstance(this).testMethod();
@@ -129,6 +131,10 @@ public class MainActivity extends Activity {
                     case R.id.my_async_task_test:
                         Intent intent16 = new Intent(MainActivity.this, AsyncTaskTestActitivity.class);
                         startActivity(intent16);
+                        break;
+                    case R.id.my_plugin_test:
+                        Intent intent17 = new Intent(MainActivity.this, MySubActivity.class);
+                        startActivity(intent17);
                         break;
                     default:
                         break;

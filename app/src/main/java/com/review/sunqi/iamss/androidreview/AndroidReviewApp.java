@@ -9,7 +9,22 @@ import com.squareup.leakcanary.RefWatcher;
 
 public class AndroidReviewApp extends Application {
 
+    private static Context sContext;
     private RefWatcher refWatcher;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        sContext = base;
+    }
+
+    private void hookClassLoader() {
+
+    }
+
+    public static Context getContext() {
+        return sContext;
+    }
 
     @Override
     public void onCreate() {
