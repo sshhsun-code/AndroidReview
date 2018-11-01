@@ -15,6 +15,7 @@ import com.review.sunqi.iamss.androidreview.animation_test.property_animation.Ob
 import com.review.sunqi.iamss.androidreview.animation_test.view_animation.ViewAnimationTestAct;
 import com.review.sunqi.iamss.androidreview.ashmem_test.AshmemActivity;
 import com.review.sunqi.iamss.androidreview.diy_view.demo.ViewActivity;
+import com.review.sunqi.iamss.androidreview.eventbus_test.EventBusTestActivity;
 import com.review.sunqi.iamss.androidreview.flow.FlowTestActivity;
 import com.review.sunqi.iamss.androidreview.fragment_test.HolderActivity;
 import com.review.sunqi.iamss.androidreview.glide_test.demo.GlideTestActivity;
@@ -53,6 +54,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.my_animation_view).setOnClickListener(mClickListener);
         findViewById(R.id.my_object_animator_view).setOnClickListener(mClickListener);
         findViewById(R.id.my_async_task_test).setOnClickListener(mClickListener);
+        findViewById(R.id.my_event_bus_test).setOnClickListener(mClickListener);
         findViewById(R.id.my_plugin_test).setOnClickListener(mClickListener);
         Log.e(TAG, "onCreate");
 
@@ -135,6 +137,10 @@ public class MainActivity extends Activity {
                     case R.id.my_plugin_test:
                         Intent intent17 = new Intent(MainActivity.this, MySubActivity.class);
                         startActivity(intent17);
+                        break;
+                    case R.id.my_event_bus_test:
+                        Intent intent20 = new Intent(MainActivity.this, EventBusTestActivity.class);
+                        startActivity(intent20);
                         break;
                     default:
                         break;

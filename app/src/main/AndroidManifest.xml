@@ -65,6 +65,10 @@
             android:launchMode="standard"/>
         <activity android:name=".plugin_invoke_helper.MySubActivity"
             android:launchMode="standard"/>
+        <activity android:name=".eventbus_test.EventBusTestActivity"
+            android:launchMode="standard"/>
+        <activity android:name=".eventbus_test.TestTwoActivity"
+            android:launchMode="standard"/>
         <service android:name=".adil_Test.MyAidlService"
             android:enabled="true"
             android:exported="true"
