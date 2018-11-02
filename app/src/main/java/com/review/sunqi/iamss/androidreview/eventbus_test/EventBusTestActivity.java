@@ -26,11 +26,20 @@ public class EventBusTestActivity extends Activity {
             public void onClick(View view) {
 
                 startActivity(new Intent(EventBusTestActivity.this, TestTwoActivity.class));
+                EventBus.clearCaches();
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         EventBus.getDefault().post(111);
+                    }
+                },1000);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        EventBus.getDefault().post(222);
+                        EventBus.getDefault().post(new MessageEvent("get data success", System.currentTimeMillis()));
                     }
                 },3000);
             }
