@@ -75,6 +75,7 @@ public class AndroidReviewApp extends Application {
         }
         LeakCanary.install(this);
         refWatcher= setupLeakCanary();
+        Log.e("sunqi_log", " App Resource = "  + getResources());
     }
 
     private RefWatcher setupLeakCanary() {

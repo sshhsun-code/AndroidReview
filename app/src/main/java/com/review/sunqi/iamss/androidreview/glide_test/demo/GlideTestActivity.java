@@ -6,7 +6,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.review.sunqi.iamss.androidreview.MainActivity;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.target.Target;
 import com.review.sunqi.iamss.androidreview.R;
 import com.review.sunqi.iamss.androidreview.glide_test.glide.ImageLoader;
 
@@ -22,7 +23,7 @@ public class GlideTestActivity extends Activity {
         findViewById(R.id.load).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ImageLoader.loadImage(GlideTestActivity.this, "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg",
+                Target<GlideDrawable> target =  ImageLoader.loadImage(GlideTestActivity.this, "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg",
                         img);
             }
         });
