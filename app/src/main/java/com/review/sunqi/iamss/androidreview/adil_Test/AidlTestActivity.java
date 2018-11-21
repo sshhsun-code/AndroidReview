@@ -16,6 +16,8 @@ import android.widget.TextView;
 import com.review.sunqi.iamss.androidreview.R;
 import com.review.sunqi.iamss.androidreview.adil_Test.bean.IMyAidl;
 import com.review.sunqi.iamss.androidreview.adil_Test.bean.Person;
+import com.review.sunqi.iamss.androidreview.book_test.Book;
+import com.review.sunqi.iamss.androidreview.book_test.IOnNewBookArrivedListener;
 
 import java.util.ArrayList;
 
@@ -62,6 +64,8 @@ public class AidlTestActivity extends Activity {
                         for (Person person : list) {
                             showPersonText.append("\n" + person);
                         }
+                        Log.e("sunqi_log", "Activity 注册 listener : " + listener.asBinder());
+                        mAidl.registerListener(listener);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -69,6 +73,18 @@ public class AidlTestActivity extends Activity {
             }
         });
     }
+
+    private IOnNewBookArrivedListener listener = new IOnNewBookArrivedListener.Stub() {
+        @Override
+        public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
+
+        }
+
+        @Override
+        public void onNewBookArrived(Book newBook) throws RemoteException {
+            Log.e("sunqi_log", newBook.toString());
+        }
+    };
 
     @Override
     protected void onResume() {
@@ -83,7 +99,15 @@ public class AidlTestActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        try {
+            Log.e("sunqi_log", "Activity 反注册 listener : " + listener.asBinder());
+            mAidl.unRegisterListener(listener);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         unBindMyService();
+        listener = null;
         mAidl = null;
     }
 
